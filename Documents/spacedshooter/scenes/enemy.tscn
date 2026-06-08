@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_bullet.tscn" id="2_ebullet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemy"]
+size = Vector2(34, 34)
+
+[node name="Enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+monitoring = false
+script = ExtResource("1_enemy")
+enemy_bullet_scene = ExtResource("2_ebullet")
+
+[node name="Glow" type="Polygon2D" parent="."]
+position = Vector2(0, -16)
+color = Color(0.7, 0.2, 0.9, 0.7)
+polygon = PackedVector2Array(-5, 0, 5, 0, 0, -12)
+
+[node name="LWing" type="Polygon2D" parent="."]
+color = Color(0.6, 0.13, 0.18, 1)
+polygon = PackedVector2Array(-7, -4, -22, -14, -9, 6)
+
+[node name="RWing" type="Polygon2D" parent="."]
+color = Color(0.6, 0.13, 0.18, 1)
+polygon = PackedVector2Array(7, -4, 22, -14, 9, 6)
+
+[node name="Hull" type="Polygon2D" parent="."]
+color = Color(0.9, 0.27, 0.27, 1)
+polygon = PackedVector2Array(0, 20, -9, 4, -9, -14, 9, -14, 9, 4)
+
+[node name="Cockpit" type="Polygon2D" parent="."]
+color = Color(1, 0.75, 0.4, 1)
+polygon = PackedVector2Array(0, 10, -4, -2, 4, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_enemy")

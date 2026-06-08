@@ -1,0 +1,29 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+# Godot
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+
+# Imported assets/cache
+*.import
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Builds / exports
+builds/
+exports/
+*.apk
+*.aab
+*.exe
+*.zip
+
+# Environment / secrets
+.env

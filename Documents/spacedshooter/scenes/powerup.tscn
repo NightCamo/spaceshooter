@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/powerup.gd" id="1_powerup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_powerup"]
+radius = 18.0
+
+[node name="Powerup" type="Area2D"]
+collision_layer = 16
+collision_mask = 1
+script = ExtResource("1_powerup")
+
+[node name="Glow" type="Polygon2D" parent="."]
+color = Color(1, 0.75, 0.15, 0.24)
+polygon = PackedVector2Array(0, -24, 18, -12, 18, 12, 0, 24, -18, 12, -18, -12)
+
+[node name="Core" type="Polygon2D" parent="."]
+color = Color(1, 0.75, 0.15, 1)
+polygon = PackedVector2Array(0, -17, 13, -8, 13, 8, 0, 17, -13, 8, -13, -8)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -8.0
+offset_top = -12.0
+offset_right = 9.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 20
+text = "R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_powerup")

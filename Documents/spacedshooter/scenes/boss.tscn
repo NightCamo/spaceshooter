@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/boss.gd" id="1_boss"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boss"]
+size = Vector2(178, 86)
+
+[node name="Boss" type="Area2D"]
+collision_layer = 2
+collision_mask = 5
+monitoring = false
+script = ExtResource("1_boss")
+
+[node name="Glow" type="Polygon2D" parent="."]
+color = Color(1, 0.2, 0.1, 0.16)
+polygon = PackedVector2Array(0, -70, 116, -24, 116, 34, 0, 76, -116, 34, -116, -24)
+
+[node name="LeftWing" type="Polygon2D" parent="."]
+color = Color(0.46, 0.08, 0.18, 1)
+polygon = PackedVector2Array(-28, -18, -118, -46, -92, 28, -24, 30)
+
+[node name="RightWing" type="Polygon2D" parent="."]
+color = Color(0.46, 0.08, 0.18, 1)
+polygon = PackedVector2Array(28, -18, 118, -46, 92, 28, 24, 30)
+
+[node name="Hull" type="Polygon2D" parent="."]
+color = Color(0.95, 0.26, 0.2, 1)
+polygon = PackedVector2Array(0, -62, -58, -28, -76, 32, 0, 64, 76, 32, 58, -28)
+
+[node name="Core" type="Polygon2D" parent="."]
+color = Color(1, 0.72, 0.28, 1)
+polygon = PackedVector2Array(0, -28, -22, -2, -18, 28, 0, 40, 18, 28, 22, -2)
+
+[node name="WarningBeam" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 0.2, 0.1, 0.22)
+
+[node name="LaserBeam" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 0.18, 0.08, 0.55)
+
+[node name="WarningLabel" type="Label" parent="."]
+offset_left = -108.0
+offset_top = -92.0
+offset_right = 108.0
+offset_bottom = -62.0
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "WARNING"
+horizontal_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_boss")

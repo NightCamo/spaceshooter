@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/player_laser.gd" id="1_laser"]
+
+[node name="PlayerLaser" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_laser")
+
+[node name="Glow" type="Line2D" parent="."]
+default_color = Color(0.25, 0.9, 1, 0.28)
+width = 20.0
+
+[node name="Beam" type="Line2D" parent="."]
+default_color = Color(0.85, 1, 1, 0.92)
+width = 9.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
